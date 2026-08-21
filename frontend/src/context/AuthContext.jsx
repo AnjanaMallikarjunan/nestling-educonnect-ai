@@ -27,16 +27,16 @@ export function AuthProvider({ children }) {
     const fetchData = async () => {
       try {
         const [usersRes, studentsRes, annRes, hwRes, progRes, photosRes, eventsRes, leaveRes, passRes, messagesRes] = await Promise.all([
-          fetch('http://localhost:3001/api/users').then(r => r.json()).catch(err => { console.error(err); return []; }),
-          fetch('http://localhost:3001/api/students').then(r => r.json()).catch(err => { console.error(err); return []; }),
-          fetch('http://localhost:3001/api/announcements').then(r => r.json()).catch(err => { console.error(err); return []; }),
-          fetch('http://localhost:3001/api/homework').then(r => r.json()).catch(err => { console.error(err); return []; }),
-          fetch('http://localhost:3001/api/daily-progress').then(r => r.json()).catch(err => { console.error(err); return []; }),
-          fetch('http://localhost:3001/api/photos').then(r => r.json()).catch(err => { console.error(err); return []; }),
-          fetch('http://localhost:3001/api/events').then(r => r.json()).catch(err => { console.error(err); return []; }),
-          fetch('http://localhost:3001/api/leave').then(r => r.json()).catch(err => { console.error(err); return []; }),
-          fetch('http://localhost:3001/api/password-request').then(r => r.json()).catch(err => { console.error(err); return []; }),
-          fetch('http://localhost:3001/api/messages').then(r => r.json()).catch(err => { console.error(err); return []; })
+          fetch('https://nestling-educonnect-ai.onrender.com/api/users').then(r => r.json()).catch(err => { console.error(err); return []; }),
+          fetch('https://nestling-educonnect-ai.onrender.com/api/students').then(r => r.json()).catch(err => { console.error(err); return []; }),
+          fetch('https://nestling-educonnect-ai.onrender.com/api/announcements').then(r => r.json()).catch(err => { console.error(err); return []; }),
+          fetch('https://nestling-educonnect-ai.onrender.com/api/homework').then(r => r.json()).catch(err => { console.error(err); return []; }),
+          fetch('https://nestling-educonnect-ai.onrender.com/api/daily-progress').then(r => r.json()).catch(err => { console.error(err); return []; }),
+          fetch('https://nestling-educonnect-ai.onrender.com/api/photos').then(r => r.json()).catch(err => { console.error(err); return []; }),
+          fetch('https://nestling-educonnect-ai.onrender.com/api/events').then(r => r.json()).catch(err => { console.error(err); return []; }),
+          fetch('https://nestling-educonnect-ai.onrender.com/api/leave').then(r => r.json()).catch(err => { console.error(err); return []; }),
+          fetch('https://nestling-educonnect-ai.onrender.com/api/password-request').then(r => r.json()).catch(err => { console.error(err); return []; }),
+          fetch('https://nestling-educonnect-ai.onrender.com/api/messages').then(r => r.json()).catch(err => { console.error(err); return []; })
         ]);
         setAllUsers(usersRes);
         setAllStudents(studentsRes);
@@ -69,7 +69,7 @@ export function AuthProvider({ children }) {
 
   const loginByEmail = async (email, password, role) => {
     try {
-      const res = await fetch('http://localhost:3001/api/login', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -95,7 +95,7 @@ export function AuthProvider({ children }) {
 
   const registerParent = async (name, email, password, childId) => {
     try {
-      const res = await fetch('http://localhost:3001/api/register-parent', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/register-parent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password, childId, inviteCode: 'NEST2026' })
@@ -103,7 +103,7 @@ export function AuthProvider({ children }) {
       if (res.ok) {
         const data = await res.json();
         setAllUsers(prev => [...prev, data.user]);
-        const studentsRes = await fetch('http://localhost:3001/api/students').then(r => r.json());
+        const studentsRes = await fetch('https://nestling-educonnect-ai.onrender.com/api/students').then(r => r.json());
         setAllStudents(studentsRes);
         return data.user;
       }
@@ -115,7 +115,7 @@ export function AuthProvider({ children }) {
 
   const registerTeacher = async (name, email, password, assignedClass) => {
     try {
-      const res = await fetch('http://localhost:3001/api/register-teacher', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/register-teacher', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, inviteCode: 'TEACH2026' })
@@ -132,7 +132,7 @@ export function AuthProvider({ children }) {
 
   const addAnnouncement = async (title, description, priority) => {
     try {
-      const res = await fetch('http://localhost:3001/api/announcements', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/announcements', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, description, priority, createdBy: currentUser?.name || 'Teacher' })
@@ -150,7 +150,7 @@ export function AuthProvider({ children }) {
 
   const addHomework = async (subject, title, description, dueDate) => {
     try {
-      const res = await fetch('http://localhost:3001/api/homework', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/homework', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -174,7 +174,7 @@ export function AuthProvider({ children }) {
 
   const updateDailyProgress = async (studentId, attendance, academicRating, behaviourRating, participationRating, teacherNote) => {
     try {
-      const res = await fetch('http://localhost:3001/api/daily-progress', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/daily-progress', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -187,7 +187,7 @@ export function AuthProvider({ children }) {
         })
       });
       if (res.ok) {
-        const progRes = await fetch('http://localhost:3001/api/daily-progress').then(r => r.json());
+        const progRes = await fetch('https://nestling-educonnect-ai.onrender.com/api/daily-progress').then(r => r.json());
         setAllDailyProgress(progRes);
       }
     } catch (err) {
@@ -197,13 +197,13 @@ export function AuthProvider({ children }) {
 
   const submitLeaveRequest = async (studentId, startDate, endDate, reason) => {
     try {
-      const res = await fetch('http://localhost:3001/api/leave', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/leave', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ studentId, startDate, endDate, reason })
       });
       if (res.ok) {
-        const leaves = await fetch('http://localhost:3001/api/leave').then(r => r.json());
+        const leaves = await fetch('https://nestling-educonnect-ai.onrender.com/api/leave').then(r => r.json());
         setAllLeaveRequests(leaves);
         return true;
       }
@@ -216,7 +216,7 @@ export function AuthProvider({ children }) {
 
   const updateLeaveStatus = async (id, status) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/leave/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/leave/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status })
@@ -231,7 +231,7 @@ export function AuthProvider({ children }) {
 
   const createStudent = async (name, className, rollNumber) => {
     try {
-      const res = await fetch('http://localhost:3001/api/students', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/students', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, className, rollNumber })
@@ -249,7 +249,7 @@ export function AuthProvider({ children }) {
 
   const updateParent = async (id, fields) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/users/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/users/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fields)
@@ -259,7 +259,7 @@ export function AuthProvider({ children }) {
         setAllUsers(prev => prev.map(u => u.id === id ? updated : u));
         
         // Synchronize students state
-        const studentsRes = await fetch('http://localhost:3001/api/students').then(r => r.json());
+        const studentsRes = await fetch('https://nestling-educonnect-ai.onrender.com/api/students').then(r => r.json());
         setAllStudents(studentsRes);
         
         return updated;
@@ -272,14 +272,14 @@ export function AuthProvider({ children }) {
 
   const deleteParent = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/users/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/users/${id}`, {
         method: 'DELETE'
       });
       if (res.ok) {
         setAllUsers(prev => prev.filter(u => u.id !== id));
         
         // Synchronize students state
-        const studentsRes = await fetch('http://localhost:3001/api/students').then(r => r.json());
+        const studentsRes = await fetch('https://nestling-educonnect-ai.onrender.com/api/students').then(r => r.json());
         setAllStudents(studentsRes);
         
         return true;
@@ -292,13 +292,13 @@ export function AuthProvider({ children }) {
 
   const submitPasswordRequest = async (parentId, parentName) => {
     try {
-      const res = await fetch('http://localhost:3001/api/password-request', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/password-request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ parentId, parentName })
       });
       if (res.ok) {
-        const reqs = await fetch('http://localhost:3001/api/password-request').then(r => r.json());
+        const reqs = await fetch('https://nestling-educonnect-ai.onrender.com/api/password-request').then(r => r.json());
         setAllPasswordRequests(reqs);
         return true;
       }
@@ -310,7 +310,7 @@ export function AuthProvider({ children }) {
 
   const addPhoto = async (imageUrl, activityTitle, description) => {
     try {
-      const res = await fetch('http://localhost:3001/api/photos', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/photos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ imageUrl, activityTitle, description })
@@ -328,7 +328,7 @@ export function AuthProvider({ children }) {
 
   const updatePhoto = async (id, updatedFields) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/photos/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/photos/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedFields)
@@ -344,7 +344,7 @@ export function AuthProvider({ children }) {
 
   const deletePhoto = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/photos/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/photos/${id}`, {
         method: 'DELETE'
       });
       if (res.ok) {
@@ -357,7 +357,7 @@ export function AuthProvider({ children }) {
 
   const updateAnnouncement = async (id, updatedFields) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/announcements/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/announcements/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedFields)
@@ -373,7 +373,7 @@ export function AuthProvider({ children }) {
 
   const deleteAnnouncement = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/announcements/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/announcements/${id}`, {
         method: 'DELETE'
       });
       if (res.ok) {
@@ -386,7 +386,7 @@ export function AuthProvider({ children }) {
 
   const updateHomework = async (id, updatedFields) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/homework/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/homework/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedFields)
@@ -402,7 +402,7 @@ export function AuthProvider({ children }) {
 
   const deleteHomework = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/homework/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/homework/${id}`, {
         method: 'DELETE'
       });
       if (res.ok) {
@@ -415,7 +415,7 @@ export function AuthProvider({ children }) {
 
   const addEvent = async (title, description, date, time, location) => {
     try {
-      const res = await fetch('http://localhost:3001/api/events', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/events', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, description, date: new Date(date).toISOString(), time, location })
@@ -433,7 +433,7 @@ export function AuthProvider({ children }) {
 
   const updateEvent = async (id, updatedFields) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/events/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/events/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -452,7 +452,7 @@ export function AuthProvider({ children }) {
 
   const deleteEvent = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/events/${id}`, {
+      const res = await fetch(`https://nestling-educonnect-ai.onrender.com/api/events/${id}`, {
         method: 'DELETE'
       });
       if (res.ok) {
@@ -465,13 +465,13 @@ export function AuthProvider({ children }) {
 
   const sendMessage = async (senderId, receiverId, text) => {
     try {
-      const res = await fetch('http://localhost:3001/api/messages', {
+      const res = await fetch('https://nestling-educonnect-ai.onrender.com/api/messages', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ senderId, receiverId, text })
       });
       if (res.ok) {
-        const messagesRes = await fetch('http://localhost:3001/api/messages').then(r => r.json());
+        const messagesRes = await fetch('https://nestling-educonnect-ai.onrender.com/api/messages').then(r => r.json());
         setAllMessages(messagesRes);
         return true;
       }

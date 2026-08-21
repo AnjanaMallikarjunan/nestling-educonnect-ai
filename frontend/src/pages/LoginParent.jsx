@@ -39,8 +39,8 @@ export default function LoginParent() {
     setLoading(true);
 
     // Simulate network delay
-    setTimeout(() => {
-      const success = loginByEmail(email, password, 'parent');
+    setTimeout(async () => {
+      const success = await loginByEmail(email, password, 'parent');
       setLoading(false);
       if (success) {
         if (rememberMe) {

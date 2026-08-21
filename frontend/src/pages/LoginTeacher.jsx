@@ -39,8 +39,8 @@ export default function LoginTeacher() {
     setLoading(true);
 
     // Simulate network delay
-    setTimeout(() => {
-      const success = loginByEmail(email, password, 'teacher');
+    setTimeout(async () => {
+      const success = await loginByEmail(email, password, 'teacher');
       setLoading(false);
       if (success) {
         if (rememberMe) {
