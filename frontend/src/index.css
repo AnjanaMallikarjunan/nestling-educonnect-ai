@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Core Colors */
+  --color-primary: #176B67; /* Deep Teal */
+  --color-primary-light: #259B96; 
+  --color-primary-bg: #E6F2F0; 
+  
+  --color-secondary: #A8C3A0; /* Sage Green */
+  --color-secondary-bg: #F1F6F0;
+
+  --color-accent: #F4B6A6; /* Soft Peach */
+  --color-accent-light: #F7C8BC; 
+  --color-accent-bg: #FDF2F0; 
+
+  /* Neutral Colors */
+  --color-bg: #FFF9F0; /* Warm Cream */
+  --color-surface: #FFFFFF;
+  --color-text-main: #2C3539; /* Dark Charcoal */
+  --color-text-muted: #606669; 
+  --color-border: #EBE5DC; /* Warm Border */
+
+  /* Status Colors */
+  --color-urgent: #EF4444; /* Red 500 */
+  --color-urgent-bg: #FEF2F2;
+  
+  --color-important: #F4B6A6; /* Using Soft Peach for Important */
+  --color-important-bg: #FDF2F0;
+
+  --color-general: #176B67; /* Using Deep Teal for general alerts */
+  --color-general-bg: #E6F2F0;
+
+  --color-success: #A8C3A0; /* Using Sage Green for Success */
+  --color-success-bg: #F1F6F0;
+
+  /* Typography */
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(23 107 103 / 0.05), 0 4px 6px -4px rgb(23 107 103 / 0.05);
+  --shadow-card: 0 12px 24px -8px rgb(23 107 103 / 0.04);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+body.light-mode {
+  --color-bg: #FFF9F0;
+  --color-surface: #FFFFFF;
+  --color-text-main: #2C3539;
+  --color-text-muted: #606669;
+  --color-border: #EBE5DC;
+  --color-primary-bg: #E6F2F0;
+  --color-accent-bg: #FDF2F0;
+  --color-secondary-bg: #F1F6F0;
+  --color-success-bg: #F1F6F0;
+  --color-important-bg: #FDF2F0;
+  --color-urgent-bg: #FEF2F2;
+  --color-general-bg: #E6F2F0;
+}
+
+body.dark-mode {
+  --color-bg: #0F172A;
+  --color-surface: #1E293B;
+  --color-text-main: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-border: #334155;
+  --color-primary-bg: #1E3A3A;
+  --color-accent-bg: #3B2A27;
+  --color-secondary-bg: #2A362D;
+  --color-success-bg: #2A362D;
+  --color-important-bg: #3B2A27;
+  --color-urgent-bg: #451A1A;
+  --color-general-bg: #1E3A3A;
+}
+
+/* Reset & Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-main);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Utility Classes */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  font-family: var(--font-heading);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: #CCFBF1;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 6rem; /* Mobile nav space */
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    margin-left: 250px; /* Sidebar width */
+    padding-bottom: 2rem;
+  }
+}

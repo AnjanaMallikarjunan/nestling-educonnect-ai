@@ -1,0 +1,12 @@
+{
+  "name": "nestling-educonnect-ai-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:all": "concurrently \"npm --prefix frontend run dev\" \"npm --prefix backend start\"",
+    "install:all": "npm install --prefix frontend && npm install --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

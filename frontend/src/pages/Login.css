@@ -1,0 +1,175 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--color-bg);
+  background-image: radial-gradient(circle at top right, var(--color-primary-bg), transparent 40%),
+                    radial-gradient(circle at bottom left, var(--color-accent-bg), transparent 40%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--color-primary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-10deg);
+  box-shadow: 0 10px 25px -5px rgba(15, 118, 110, 0.4);
+}
+
+.logo-container h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.role-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.role-selection h2 {
+  font-size: 1.25rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.role-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  text-align: left;
+  transition: all var(--transition-normal);
+}
+
+.role-btn:hover {
+  border-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.parent-btn:hover {
+  background-color: var(--color-general-bg);
+}
+
+.teacher-btn:hover {
+  background-color: var(--color-primary-bg);
+}
+
+.role-btn svg {
+  color: var(--color-primary);
+}
+
+.role-text h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.role-text p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Spinner and custom animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.password-toggle-btn:hover {
+  color: var(--color-text-main);
+}
+
+/* Modal styling for Invite Sign up */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  padding: 2rem;
+  position: relative;
+  text-align: left;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

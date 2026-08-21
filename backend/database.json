@@ -1,0 +1,295 @@
+{
+  "users": [
+    {
+      "id": "user_parent_1",
+      "name": "Rahul Sharma",
+      "email": "rahul@example.com",
+      "role": "parent",
+      "childId": "student_1",
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Rahul"
+    },
+    {
+      "id": "user_teacher_1",
+      "name": "Mrs. Priya",
+      "email": "priya@example.com",
+      "role": "teacher",
+      "class": "Grade 4 - Section A",
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Priya"
+    },
+    {
+      "id": "user_teacher_2",
+      "name": "Mr. Vikram Sen",
+      "email": "vikram@example.com",
+      "role": "teacher",
+      "class": "Mathematics",
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Vikram"
+    },
+    {
+      "id": "user_teacher_3",
+      "name": "Ms. Anjali Gupta",
+      "email": "anjali@example.com",
+      "role": "teacher",
+      "class": "Chemistry",
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Anjali"
+    },
+    {
+      "id": "user_teacher_4",
+      "name": "Mr. Kabir Mehta",
+      "email": "kabir@example.com",
+      "role": "teacher",
+      "class": "English",
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Kabir"
+    },
+    {
+      "id": "user_parent_1787221520185",
+      "name": "riya",
+      "email": "riya@example.com",
+      "role": "parent",
+      "childId": "student_2",
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=riya"
+    },
+    {
+      "id": "user_parent_1787222251515",
+      "name": "reshma",
+      "email": "reshma06@gmail.com",
+      "role": "parent",
+      "childId": "student_7",
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=reshma",
+      "password": "password"
+    },
+    {
+      "id": "user_parent_1787242054990",
+      "name": "venkat",
+      "email": "venkat@gmail.com",
+      "role": "parent",
+      "childId": "student_1787242015690",
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=venkat",
+      "password": "passwordd"
+    },
+    {
+      "id": "user_parent_1787285131816",
+      "name": "shuhaina",
+      "email": "ayeshashuhaina@gmail.com",
+      "password": "password",
+      "role": "parent",
+      "childId": "student_1787285124839",
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=shuhaina"
+    }
+  ],
+  "students": [
+    {
+      "id": "student_1",
+      "name": "Ananya Sharma",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 101,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Ananya",
+      "parentId": "user_parent_1",
+      "teacherId": "user_teacher_1"
+    },
+    {
+      "id": "student_2",
+      "name": "Aarav Patel",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 102,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Aarav",
+      "parentId": "user_parent_1",
+      "teacherId": "user_teacher_1"
+    },
+    {
+      "id": "student_3",
+      "name": "Riya Gupta",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 103,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Riya",
+      "teacherId": "user_teacher_1"
+    },
+    {
+      "id": "student_4",
+      "name": "Vihaan Kumar",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 104,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Vihaan",
+      "teacherId": "user_teacher_1"
+    },
+    {
+      "id": "student_5",
+      "name": "Ishaan Singh",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 105,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Ishaan",
+      "teacherId": "user_teacher_1"
+    },
+    {
+      "id": "student_6",
+      "name": "Aditya Desai",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 106,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Aditya",
+      "teacherId": "user_teacher_1"
+    },
+    {
+      "id": "student_7",
+      "name": "Kavya Reddy",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 107,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Kavya",
+      "teacherId": "user_teacher_1"
+    },
+    {
+      "id": "student_8",
+      "name": "Neha Joshi",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 108,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=Neha",
+      "teacherId": "user_teacher_1"
+    },
+    {
+      "id": "student_1787242015690",
+      "name": "rohan K",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 109,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=rohan K",
+      "teacherId": "user_teacher_1"
+    },
+    {
+      "id": "student_1787285124839",
+      "name": "anannya",
+      "class": "Grade 4 - Section A",
+      "rollNumber": 110,
+      "profileImage": "https://api.dicebear.com/7.x/notionists/svg?seed=anannya",
+      "parentId": "user_parent_1787285131816",
+      "teacherId": "user_teacher_1"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann_1",
+      "title": "School Closed on Friday",
+      "description": "Due to severe weather warnings, the school will remain closed this Friday.",
+      "priority": "urgent",
+      "createdBy": "Principal",
+      "date": "2026-08-20T10:24:29.356Z",
+      "readBy": []
+    },
+    {
+      "id": "ann_2",
+      "title": "Annual Sports Day Registration",
+      "description": "Please submit the forms for Annual Sports Day by next week.",
+      "priority": "important",
+      "createdBy": "Mrs. Priya",
+      "date": "2026-08-19T10:24:29.356Z",
+      "readBy": [
+        "user_parent_1"
+      ]
+    },
+    {
+      "id": "ann_3",
+      "title": "New Library Books Added",
+      "description": "We have added 50 new books to the children's section!",
+      "priority": "general",
+      "createdBy": "Librarian",
+      "date": "2026-08-17T10:24:29.356Z",
+      "readBy": []
+    }
+  ],
+  "homework": [
+    {
+      "id": "hw_1",
+      "subject": "Mathematics",
+      "title": "Exercise 4.2",
+      "description": "Complete all questions from Exercise 4.2 on fractions.",
+      "assignedDate": "2026-08-20T10:24:29.356Z",
+      "dueDate": "2026-08-22T10:24:29.356Z",
+      "teacherId": "user_teacher_1",
+      "status": "pending"
+    },
+    {
+      "id": "hw_2",
+      "subject": "Science",
+      "title": "Solar System Project",
+      "description": "Bring materials for the solar system model tomorrow.",
+      "assignedDate": "2026-08-19T10:24:29.356Z",
+      "dueDate": "2026-08-21T10:24:29.356Z",
+      "teacherId": "user_teacher_1",
+      "status": "pending"
+    }
+  ],
+  "dailyProgress": [
+    {
+      "id": "prog_1",
+      "studentId": "student_1",
+      "date": "2026-08-20T10:24:29.356Z",
+      "academicRating": 4,
+      "participationRating": 5,
+      "behaviourRating": 4,
+      "attendance": "Present",
+      "teacherNote": "Participated actively in today's science activity."
+    },
+    {
+      "id": "prog_1787236846951",
+      "studentId": "student_2",
+      "date": "2026-08-20T14:41:11.753Z",
+      "attendance": "Present",
+      "academicRating": 5,
+      "behaviourRating": 5,
+      "participationRating": 5,
+      "teacherNote": "didn't finish his math homework"
+    }
+  ],
+  "events": [
+    {
+      "id": "event_1",
+      "title": "Parent-Teacher Meeting",
+      "description": "End of term review.",
+      "date": "2026-08-25T10:24:29.356Z",
+      "time": "14:00 - 16:00",
+      "location": "Class 4A"
+    },
+    {
+      "id": "event_2",
+      "title": "Science Fair",
+      "description": "Annual school science fair.",
+      "date": "2026-09-01T10:24:29.356Z",
+      "time": "09:00 - 15:00",
+      "location": "Main Hall"
+    },
+    {
+      "id": "event_1787238949171",
+      "title": "sci fair",
+      "description": "bring art copy",
+      "date": "2026-08-20T00:00:00.000Z",
+      "time": "10:00 - 12:00",
+      "location": "class 201"
+    }
+  ],
+  "leaveRequests": [
+    {
+      "id": "leave_1787236319498",
+      "studentId": "student_2",
+      "startDate": "2026-08-22",
+      "endDate": "2026-08-25",
+      "reason": "going for a family function",
+      "status": "rejected",
+      "date": "2026-08-20T14:31:59.498Z"
+    }
+  ],
+  "photos": [
+    {
+      "id": "photo_1787238987191",
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
+      "activityTitle": "scifi",
+      "description": "learnt sci",
+      "date": "2026-08-20T15:16:27.191Z",
+      "studentIds": []
+    }
+  ],
+  "passwordRequests": [
+    {
+      "id": "req_1787244956172",
+      "parentId": "user_parent_1787242054990",
+      "parentName": "venkat",
+      "date": "2026-08-20T16:55:56.172Z",
+      "status": "pending"
+    }
+  ]
+}
